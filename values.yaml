@@ -1,0 +1,19 @@
+
+hostPath:
+  dags: ""
+  logs: ""
+
+airflow:
+  executor: KubernetesExecutor
+  dags:
+    persistence:
+      enabled: true
+      existingClaim: airflow-local-dags-folder
+      storageClassName: local-storage
+  logs:
+    persistence:
+      enabled: true
+      existingClaim: airflow-local-logs-folder
+      storageClassName: local-storage    
+  redis:
+    enabled: false
