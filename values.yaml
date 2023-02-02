@@ -8,12 +8,12 @@ airflow:
   dags:
     persistence:
       enabled: true
-      existingClaim: airflow-local-dags-folder
+      existingClaim: airflow-dags
       storageClassName: local-storage
   logs:
     persistence:
       enabled: true
-      existingClaim: airflow-local-logs-folder
+      existingClaim: airflow-logs
       storageClassName: local-storage    
   redis:
     enabled: false

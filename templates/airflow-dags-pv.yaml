@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: airflow-local-logs-folder
+  name: airflow-dags
   labels:
     type: local
 spec:
   storageClassName: manual
   capacity:
-    storage: 2Gi
+    storage: 1Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: {{ .Values.hostPath.logs }}
+    path: {{ .Values.hostPath.dags }}
